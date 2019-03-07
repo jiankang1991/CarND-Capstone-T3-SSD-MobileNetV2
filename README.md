@@ -1,3 +1,6 @@
+# CarND-Capstone project simulation
+
+
 This is the project repo for the final project of the Udacity Self-Driving Car Nanodegree: Programming a Real Self-Driving Car. For more information about the project, see the project introduction [here](https://classroom.udacity.com/nanodegrees/nd013/parts/6047fe34-d93c-4f50-8336-b70ef10cb4b2/modules/e1a23b06-329a-4684-a717-ad476f0d8dff/lessons/462c933d-9f24-42d3-8bdc-a08a5fc866e4/concepts/5ab4b122-83e6-436d-850f-9f4d26627fd9).
 
 Please use **one** of the two installation options, either native **or** docker installation.
@@ -72,3 +75,32 @@ cd CarND-Capstone/ros
 roslaunch launch/site.launch
 ```
 5. Confirm that traffic light detection works on real life images
+
+
+---
+
+## Trouble shooting for ROS installation on Ubuntu 18.04
+
+Since my local Ubuntu system is of version 18.04, I have to download [ROS Melodic Morenia](http://wiki.ros.org/melodic). The installation can be done according to the guidance. However, I cannot run  
+```
+sudo apt install ros-melodic-desktop-full
+```
+to install the full package of ROS. I find the problem is due to the incompatible version of my `libprotoc-dev`, which is 
+```
+libprotoc-dev : Depends: libprotobuf-dev (= 3.0.0-9.1ubuntu1) but 3.6.1-4 is to be installed
+```
+So I downgrade my version of `libprotoc-dev` by running 
+```
+sudo apt install libprotoc-dev = 3.0.0-9.1ubuntu1
+```
+After that **ROS Melodic** can be successfully run on my computer. 
+
+## Traffic light detection based on SSD-MobileNetV2
+
+The more information can be found in my [repo](https://github.com/karlTUM/udacity_traffic_light_detection). 
+
+## Simulation result
+
+
+
+
